@@ -1,0 +1,41 @@
+INSERT INTO tb_cidades(cod_cid, nome_cid, estado_cid) VALUES
+(1, 'cascavel', 'PR');
+
+INSERT INTO tb_clientes(cod_cliente, nome_cliente, telefone_cliente, ativo_cliente, tipo_cliente, senha_cliente, fk_cod_cid, email_cliente) VALUES
+(1,'alexia' ,55555555555,'S','C','senha123',1,'alexiafofa@gmail.com'),
+(2,'pelequito',11111111111,'S','C','senha321',1,'pelequito@gmail.com'),
+(3,'manguinha',22222222222,'S','C','naotemsenha',1,'manguinha@gmail.com'),
+(4,'joao',33333333333,'N','C','temsenhasim',1,'alexiafofa@gmail.com'),
+(5,'joanita',44444444444,'S','C','senha123',1,'joanita@gmail.com');
+
+INSERT INTO tb_pedidos(cod_pedido, fk_cod_cliente, data_pedido) VALUES
+(1,1,'2023/10/08'),
+(2,2,'2023/10/07'),
+(3,3,'2023/10/06'),
+(4,4,'2023/10/05'),
+(5,5,'2023/10/04');
+
+INSERT INTO tb_categorias (cod_categoria, nome_categoria) VALUES
+(1,'Quentes'),
+(2,'Frios');
+
+INSERT INTO tb_produtos(cod_produto, nome_produto, preco_produto, descricao_produto, ativo_produto, foto_produto, fk_cod_categoria) VALUES
+(1,'Cappuccino',10,'O cappuccino tradicional italiano é uma mistura de café, leite vaporizado e espuma.','S','','1'),
+(2,'Macchiato',12,'O macchiato é um espresso servido com um pouco de leite.','S','','1'),
+(3,'Frappuccino',10,'O Frappuccino conta com um sabor frutado inovador e surpreende pela sutil base de morango, combinada com o sabor intenso e característico do blueberry (mirtilo), proporcionando um toque essencial de acidez ao paladar.','S','','2'),
+(4,'Espresso',10,'Tradicional café feito na hora.','S','','1'),
+(5,'Caramel Macchiato',10,'cappuccino tradicional italiano é uma mistura de café, leite vaporizado e espuma','S','','1');
+
+INSERT INTO tb_fornecedores (cod_fornecedor, cnpj_fornecedor, ativo_fornecedor, email_fornecedor, fone_fornecedor, fks_cod_cid, bairro_fornecedor, numero_fornecedor, complemento_fornecedor, rua_fornecedor) VALUES
+(1,47086987000172,'s','fazendoagua@gmail.com',85930304040,'1','Jardim Clarito',702,'Galpão','Rua das Androeiras'),
+(2,30936330000154,'s','fazendagusto@gmail.com',55920204040,'1','Jardim Gomes',102,'Esquina','Rua Augustin'),
+(3,85367068000166,'s','cafesfrescos@gmail.com',45940404040,'1','Country',559,'','Rua Fogueira'),
+(4,85987017000137,'s','cafesalvador@gmail.com',509504040,'1','Terminal',372,'','Rua Cisnei'),
+(5,63070770000120,'s','paodelo@gmail.com',90920206060,'1','Jardim Felicidade',984,'Portão Azul','Rua das Arvoeiras');
+
+INSERT INTO tb_recebimentos (cod_recebimentos, data_recebimento, fk_cod_fornecedor, fks_cod_produto) VALUES
+(1,'2020/04/23',1,1),
+(2,'2019/08/04',2,2),
+(3,'2019/08/05',3,3),
+(4,'2019/09/08',4,4),
+(5,'2020/10/13',5,5);
